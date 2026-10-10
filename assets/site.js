@@ -277,7 +277,7 @@
 
   /* ---------------- music ---------------- */
   const audio = new Audio();
-  audio.src = document.body.dataset.music || "assets/music/am.mp3";
+  audio.src = "assets/music/am.m4a";
   audio.loop = true;
   audio.preload = "none";
   audio.volume = 0;
