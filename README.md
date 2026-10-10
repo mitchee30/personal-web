@@ -1,33 +1,37 @@
-[README.md](https://github.com/user-attachments/files/30200843/README.md)
 # personal-web
 
-Wenbo Zhi's personal portfolio site — a single self-contained `index.html` with a dark theme and a hand-rolled Canvas 2D particle-network background (no external libraries, no CDN dependencies).
+Wenbo Zhi's portfolio. One painted sky over a lakeside town, and each page is a different time of day:
+
+| Page | File | Sky |
+|---|---|---|
+| Home | `index.html` | dusk |
+| About | `about.html` | afternoon |
+| Experience | `experience.html` | sunset |
+| Projects | `projects.html` | night, with a comet |
+| Say hi | `contact.html` | dawn |
+
+- **English / 中文**: the button in the top-right switches languages and the choice is remembered. Every piece of text is written twice, as `<span class="en">` and `<span class="zh">`.
+- **Background music**: put the song at `assets/music/am.mp3`. Browsers only start audio after a click, so visitors press the record button. Pages switch in place, so the music keeps playing between pages.
+- **No build step**: plain HTML, CSS and JavaScript. The sky, clouds, stars and shoreline are drawn in code, with no images.
+
+## Run locally
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+Opening `index.html` straight from disk also works. Page links then do a normal reload, so the music restarts on every page.
+
+## Files
+
+```
+index.html, about.html, experience.html, projects.html, contact.html
+assets/style.css    colours for each sky, layout
+assets/site.js      language, sky, stars and comet, scene, music, page switching
+assets/music/       put am.mp3 here
+```
 
 ## Live site
 
-Once GitHub Pages is enabled for this repo (Settings → Pages → Deploy from branch `main`, folder `/root`), it'll be live at:
-
-```
-https://mitchee30.github.io/personal-web/
-```
-
-## Sections
-
-- **About** — background and interests in embedded systems, real-time software, and hardware
-- **Skills** — languages, technologies, and developer tools
-- **Experience** — Control Software Intern @ Sioux Technologies
-- **Projects** — Midnight Sun Solar Race Car, DeployGuard CLI, Subscription Renewal Tracker
-- **Education** — University of Waterloo, Honours Electrical Engineering (Co-op)
-- **Contact** — email, GitHub, LinkedIn
-
-## Tech
-
-Plain HTML/CSS/JavaScript. The animated background is drawn on a `<canvas>` element with vanilla JS (no Three.js or other dependency), so the page loads and works offline with zero build step.
-
-## Local preview
-
-Just open `index.html` in a browser — no server or build tools required.
-
-## Updating content
-
-All content lives directly in `index.html`. Look for the section comments (`<!-- HERO -->`, `<!-- PROJECTS -->`, etc.) to find what to edit.
+GitHub Pages: Settings → Pages → Deploy from branch `main`, folder `/root`.

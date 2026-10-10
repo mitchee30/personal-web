@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="About · Wenbo Zhi" data-zh="关于我 · Wenbo Zhi">About · Wenbo Zhi</title>
+<meta name="description" content="Wenbo Zhi, Electrical Engineering at the University of Waterloo. Embedded systems, firmware, real-time software and web projects.">
+<meta name="theme-color" content="#3d2a7a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff9fc0' d='M12 1.5c.6 4.6 2.4 6.9 7 8.5-4.6 1.6-6.4 3.9-7 8.5-.6-4.6-2.4-6.9-7-8.5 4.6-1.6 6.4-3.9 7-8.5z'/%3E%3C/svg%3E">
+<script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang")||((navigator.language||"").toLowerCase().indexOf("zh")===0?"zh":"en");document.documentElement.dataset.lang=l==="zh"?"zh":"en";}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=M+PLUS+Rounded+1c:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-sky="day" data-music="assets/music/am.mp3">
+
+<div class="sky" id="sky" aria-hidden="true"></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="clouds" id="clouds" aria-hidden="true"></div>
+<div class="scene" id="scene" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="brand" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 1.5c.6 4.6 2.4 6.9 7 8.5-4.6 1.6-6.4 3.9-7 8.5-.6-4.6-2.4-6.9-7-8.5 4.6-1.6 6.4-3.9 7-8.5z"/><circle cx="19.5" cy="19" r="1.6" fill="#ffd3e6"/></svg>Wenbo Zhi</a>
+  <nav aria-label="Pages"><ul class="nav">
+      <li><a href="index.html"><span class="en">Home</span><span class="zh">首页</span></a></li>
+      <li><a href="about.html" aria-current="page"><span class="en">About</span><span class="zh">关于我</span></a></li>
+      <li><a href="experience.html"><span class="en">Experience</span><span class="zh">经历</span></a></li>
+      <li><a href="projects.html"><span class="en">Projects</span><span class="zh">作品</span></a></li>
+      <li><a href="contact.html"><span class="en">Say hi</span><span class="zh">联系我</span></a></li>
+  </ul></nav>
+  <div class="tools">
+    <button class="pill music-btn" type="button" data-music-toggle aria-pressed="false" aria-label="Play or pause music">
+      <span class="disc" aria-hidden="true"></span>
+      <span class="music-label">AM<small>T-Chenxi</small></span>
+    </button>
+    <button class="pill lang-btn" id="langBtn" type="button">中文</button>
+  </div>
+  <div class="music-hint" id="musicHint" role="status">
+    <span class="en">Music file not found. Put the song at <b>assets/music/am.mp3</b>.</span><span class="zh">没有找到音乐文件。请把歌曲放到 <b>assets/music/am.mp3</b>。</span>
+  </div>
+</header>
+
+<main id="main">
+
+  <h1 class="page-title"><span class="en">About me</span><span class="zh">关于我</span></h1>
+  <p class="page-lede"><span class="en">An engineer who likes the moment software meets real hardware.</span><span class="zh">喜欢软件和真实硬件相遇的那一刻。</span></p>
+
+  <section class="panel">
+    <p class="en">I&#39;m an <b>Honours Electrical Engineering</b> student at the University of Waterloo (Co-op), working mostly on embedded systems, real-time Linux and industrial control software.</p>
+    <p class="zh">我是滑铁卢大学<b>电子工程（Co-op）</b>的学生，主要做嵌入式系统、实时 Linux 和工业控制软件。</p>
+    <p class="en">Most recently I interned at <b>Sioux Technologies</b>, calibrating firmware for production smart controllers and building an atomic rollback mechanism that took OS-level configuration errors down to zero. I like problems where software has to survive contact with real hardware: noisy CAN buses, microsecond scheduling, installs that can&#39;t be allowed to half-fail.</p>
+    <p class="zh">最近在 <b>Sioux Technologies</b> 实习，为生产环境的智能控制器标定固件，还写了一个原子回滚机制，把系统级配置错误降到了零。我喜欢软件必须和真实硬件打交道的问题：嘈杂的 CAN 总线、微秒级调度、绝不能装到一半失败的安装程序。</p>
+    <p class="en">Outside work I&#39;m on the <b>Midnight Sun</b> solar car team and help rebuild the website for <b>Electrium Mobility</b>, Waterloo&#39;s electric-vehicle design team. On my own time I make side projects, from C++ CLIs to WeChat mini-programs and Claude-powered web apps.</p>
+    <p class="zh">课外我在 <b>Midnight Sun</b> 太阳能赛车队，也在帮滑铁卢电动交通设计团队 <b>Electrium Mobility</b> 重做官网。业余时间写各种小项目，从 C++ 命令行工具到微信小程序，再到用 Claude 驱动的网页应用。</p>
+  </section>
+
+  <section class="panel">
+    <h2><span class="en">What I work with</span><span class="zh">常用技能</span></h2>
+    <div class="skills">
+      <div><h3><span class="en">Languages</span><span class="zh">编程语言</span></h3><div class="chips"><span class="chip">C/C++</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Bash</span><span class="chip">PowerShell</span><span class="chip">VHDL</span><span class="chip">NSIS</span></div></div>
+      <div><h3><span class="en">Hardware and systems</span><span class="zh">硬件与系统</span></h3><div class="chips"><span class="chip">Embedded firmware</span><span class="chip">PREEMPT_RT Linux</span><span class="chip">CAN bus</span><span class="chip">PCB assembly</span><span class="chip">DSP</span><span class="chip">CODESYS</span></div></div>
+      <div><h3><span class="en">Web</span><span class="zh">网页开发</span></h3><div class="chips"><span class="chip">React</span><span class="chip">Tailwind CSS</span><span class="chip">Docusaurus</span><span class="chip">Flask</span><span class="chip">Claude API</span><span class="chip">WeChat Cloud Dev</span></div></div>
+      <div><h3><span class="en">Tools</span><span class="zh">工具</span></h3><div class="chips"><span class="chip">Git</span><span class="chip">CMake</span><span class="chip">GitHub Actions</span><span class="chip">LTspice</span><span class="chip">MATLAB/Simulink</span><span class="chip">LaTeX</span></div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="edu">
+      <div>
+        <h2><span class="en">University of Waterloo</span><span class="zh">滑铁卢大学</span></h2>
+        <p><span class="en">Honours Electrical Engineering, Co-op</span><span class="zh">电子工程荣誉学士（Co-op）</span></p>
+        <p class="muted" style="margin-top:.6rem;font-size:.95rem"><span class="en">Courses: ECE 106 Electricity and Magnetism, ECE 108 Discrete Math and Logic, ECE 124 Digital Circuits, ECE 140 Linear Circuits, ECE 150 Programming</span><span class="zh">课程：ECE 106 电磁学、ECE 108 离散数学与逻辑、ECE 124 数字电路、ECE 140 线性电路、ECE 150 程序设计</span></p>
+      </div>
+      <div class="edu-when"><span class="en">Sep 2025 to 2030 (expected)<br>Waterloo, Ontario</span><span class="zh">2025 年 9 月至 2030 年（预计）<br>安大略省滑铁卢</span></div>
+    </div>
+    <p class="muted" style="margin-top:1rem;font-size:.95rem"><span class="en">Certificates: Data Structures and Algorithmic Toolbox (UC San Diego), Introduction to Electronics (Georgia Tech)</span><span class="zh">证书：数据结构与算法工具箱（加州大学圣地亚哥分校）、电子学导论（佐治亚理工学院）</span></p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span class="en">Designed and built by Wenbo Zhi in Waterloo. Music: “AM” by T-Chenxi.</span><span class="zh">由 Wenbo Zhi 在滑铁卢设计制作。背景音乐：T-Chenxi《AM》。</span>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
