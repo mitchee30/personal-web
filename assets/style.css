@@ -51,58 +51,15 @@ html[data-lang="zh"] body{font-family:var(--font-zh); line-height:1.85;}
 html[data-lang="en"] .zh{display:none !important;}
 html[data-lang="zh"] .en{display:none !important;}
 
-/* ---------- the sky ---------- */
-.sky{position:fixed; inset:0; z-index:0; pointer-events:none;}
-.sky-layer{
-  position:absolute; inset:0; opacity:0; transition:opacity 1.6s ease;
-}
-.sky-layer.on{opacity:1;}
-/* water band sits under the shoreline: 9.5vh */
-.sky-layer[data-sky="dusk"]{
-  background:
-    linear-gradient(to bottom,#ffcfa6 0%,#e98ab0 35%,#5a3c8e 100%) bottom/100% 9.5vh no-repeat,
-    linear-gradient(to bottom,#1d1747 0%,#3d2a7a 28%,#9a4f9e 52%,#f08aa8 70%,#ffc9a0 86%,#ffe9b8 100%);
-}
-.sky-layer[data-sky="day"]{
-  background:
-    linear-gradient(to bottom,#e8f4ff 0%,#8cc4f2 40%,#3c78c4 100%) bottom/100% 9.5vh no-repeat,
-    linear-gradient(to bottom,#3f7fd9 0%,#74b3f2 42%,#bfe3ff 78%,#fff3e0 100%);
-}
-.sky-layer[data-sky="sunset"]{
-  background:
-    linear-gradient(to bottom,#ffd27a 0%,#f2846a 40%,#5a2c6a 100%) bottom/100% 9.5vh no-repeat,
-    linear-gradient(to bottom,#2a2a6e 0%,#7a4aa0 28%,#ef7a7a 54%,#ffad5c 76%,#ffe08a 100%);
-}
-.sky-layer[data-sky="night"]{
-  background:
-    linear-gradient(to bottom,#4b3f8f 0%,#1d2160 45%,#070b26 100%) bottom/100% 9.5vh no-repeat,
-    linear-gradient(to bottom,#070b26 0%,#121a4a 45%,#2a2f78 80%,#4b3f8f 100%);
-}
-.sky-layer[data-sky="dawn"]{
-  background:
-    linear-gradient(to bottom,#ffe1c2 0%,#e5a9c4 40%,#6c6aa8 100%) bottom/100% 9.5vh no-repeat,
-    linear-gradient(to bottom,#4a4f9c 0%,#a58ccf 38%,#f5b8c8 68%,#ffe1c2 100%);
-}
-
-#stars{position:fixed; inset:0; width:100%; height:100%; z-index:1; pointer-events:none;}
-
-.clouds{position:fixed; inset:0; z-index:2; pointer-events:none; overflow:hidden;
-  opacity:var(--cloud-opacity); transition:opacity 1.6s ease;}
-.cloud{position:absolute; animation:drift linear infinite; filter:blur(.7px);}
-.cloud .c-shine{fill:none; stroke:#fff; stroke-width:5; stroke-linecap:round; opacity:.55;}
-@media (max-width:620px){ .cloud{opacity:.75;} }
-.cloud .c-top{fill:var(--cloud); transition:fill 1.6s ease;}
-.cloud .c-under{fill:var(--cloud-glow); transition:fill 1.6s ease;}
-@keyframes drift{from{transform:translateX(-10vw);} to{transform:translateX(10vw);}}
-
-.scene{position:fixed; left:0; right:0; bottom:0; height:34vh; z-index:3; pointer-events:none;}
-.scene svg{width:100%; height:100%; display:block;}
-.scene .land{fill:var(--land); transition:fill 1.6s ease;}
-.scene .reflect{fill:var(--land); opacity:.32; transition:fill 1.6s ease;}
-.scene .lit{fill:#ffd27a;}
-.scene .shimmer{stroke:#fff; stroke-linecap:round; opacity:.35; animation:shimmer 5s ease-in-out infinite;}
-@keyframes shimmer{0%,100%{opacity:.12;} 50%{opacity:.5;}}
-.scene .lamp-glow{fill:url(#lampGlow);}
+/* ---------- painted background (drawn by assets/scenes.js) ---------- */
+.bg{position:fixed; inset:0; z-index:0; pointer-events:none;}
+.bg canvas{position:absolute; inset:0; width:100%; height:100%; opacity:0; transition:opacity 1.4s ease;}
+.bg canvas.on{opacity:1;}
+body[data-sky="dusk"]{background:#463a98;}
+body[data-sky="day"]{background:#4f98e6;}
+body[data-sky="sunset"]{background:#5a4a9c;}
+body[data-sky="night"]{background:#0c1342;}
+body[data-sky="dawn"]{background:#c3b2e6;}
 
 /* ---------- header ---------- */
 .top{
