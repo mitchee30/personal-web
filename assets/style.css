@@ -320,3 +320,97 @@ ul.points li::before{
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation:none !important; transition-duration:.01ms !important;}
 }
+
+/* ---------- story: which moment of the day each page is ---------- */
+.chapter{
+  display:inline-flex; align-items:center; gap:.45rem; margin-bottom:.6rem;
+  padding:.28rem .8rem; border-radius:999px; font-size:.85rem; font-weight:700;
+  background:rgba(255,255,255,.22); color:#fff; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  text-shadow:0 1px 6px rgba(30,10,70,.4);
+}
+.home-hero .chapter{margin-bottom:0;}
+.tickets-intro{margin-top:clamp(2.6rem,8vh,4.5rem); text-align:center; color:#fff; font-weight:600; text-shadow:0 1px 12px rgba(30,10,70,.6);}
+.tickets-intro + .tickets{margin-top:1rem;}
+
+/* ---------- live desk sensor ---------- */
+.desk{
+  display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem;
+  padding:.45rem .95rem; border-radius:999px; font-size:.9rem;
+  background:rgba(255,255,255,.88); color:var(--ink); box-shadow:0 8px 22px -12px rgba(30,10,70,.7);
+}
+.desk .dot{width:9px; height:9px; border-radius:50%; background:#b9b2d6; flex:none;}
+.desk .dot.live{background:#3fd08a; box-shadow:0 0 0 4px rgba(63,208,138,.22); animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(63,208,138,0);}}
+
+/* ---------- now ---------- */
+.now{display:grid; grid-template-columns:auto 1fr; gap:.55rem 1.1rem; margin-top:1rem;}
+.now dt{font-weight:700; color:var(--violet); white-space:nowrap;}
+.now dd{color:var(--ink);}
+@media (max-width:520px){ .now{grid-template-columns:1fr; gap:.15rem;} .now dd{margin-bottom:.6rem;} }
+.updated{margin-top:1rem; font-size:.85rem; color:var(--ink-soft);}
+.me{float:right; width:132px; height:132px; margin:0 0 1rem 1.4rem; border-radius:50%; object-fit:cover;
+  border:4px solid #fff; box-shadow:0 10px 26px -12px rgba(40,20,90,.7);}
+@media (max-width:520px){ .me{float:none; display:block; margin:0 auto 1rem;} }
+
+/* ---------- project media: live demos, terminal, screenshots ---------- */
+.media{margin-top:1.2rem;}
+.demo{border-radius:18px; overflow:hidden; background:linear-gradient(135deg,#ffe3ef,#e5ddff); position:relative;}
+.demo-stage{aspect-ratio:16/10; display:grid; place-items:center;}
+.demo.playing .demo-stage{aspect-ratio:auto; height:min(70vh,560px); display:block;}
+.demo iframe{width:100%; height:100%; border:0; display:block; background:#fff;}
+.demo-play{
+  appearance:none; border:0; cursor:pointer; font:inherit; font-weight:700; font-size:1rem;
+  display:inline-flex; align-items:center; gap:.6rem; padding:.85rem 1.4rem; border-radius:999px;
+  background:#fff; color:var(--ink); box-shadow:0 12px 30px -12px rgba(40,20,90,.7); transition:transform .2s;
+}
+.demo-play:hover{transform:scale(1.04);}
+.demo-play .tri{width:0; height:0; border-left:11px solid var(--rose); border-top:7px solid transparent; border-bottom:7px solid transparent;}
+.demo-note{position:absolute; left:0; right:0; bottom:.8rem; text-align:center; font-size:.82rem; color:var(--ink-soft);}
+.demo.playing .demo-note{display:none;}
+.demo-open{display:inline-flex; align-items:center; gap:.35rem; margin-top:.6rem; font-size:.9rem; font-weight:700; color:var(--violet); text-decoration:none;}
+.demo-open:hover{text-decoration:underline;}
+.demo-open svg{width:14px; height:14px;}
+
+.term{border-radius:16px; overflow:hidden; background:#16132b; box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);}
+.term-bar{display:flex; align-items:center; gap:6px; padding:.6rem .8rem; background:#221d40;}
+.term-bar i{width:10px; height:10px; border-radius:50%; background:#ff6b8b;}
+.term-bar i:nth-child(2){background:#ffcf5c;} .term-bar i:nth-child(3){background:#59d68f;}
+.term-bar span{margin-left:.5rem; font-size:.78rem; color:#a9a3cf;}
+.term-body{height:260px; overflow:auto; padding:.8rem 1rem; margin:0;
+  font-family:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace; font-size:.76rem; line-height:1.6; color:#d9d5f3; white-space:pre-wrap;}
+.tl.cmd{color:#fff;} .tl.info{color:#7fd8ff;} .tl.warn{color:#ffd36e;} .tl.err,.tl.bad{color:#ff8fa6;} .tl.good,.tl.ok{color:#7ff0b0;}
+.term-foot{display:flex; justify-content:space-between; align-items:center; padding:.5rem .9rem; font-size:.78rem; color:#a9a3cf; background:#1b1736;}
+.term-replay{border:0; background:#3a3366; color:#fff; font:inherit; font-weight:700; font-size:.78rem; padding:.3rem .8rem; border-radius:999px; cursor:pointer;}
+
+.shot{margin:0;}
+.shot img{width:100%; height:auto; display:block; border-radius:16px; box-shadow:0 10px 30px -16px rgba(40,20,90,.7);}
+.shot figcaption{margin-top:.5rem; font-size:.82rem; color:var(--ink-soft);}
+
+/* why / hard part / learned */
+.notes{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin-top:1.1rem;}
+@media (max-width:720px){ .notes{grid-template-columns:1fr;} }
+.notes div{padding:.8rem .95rem; border-radius:14px; background:#f7f2ff;}
+.notes dt{font-size:.8rem; font-weight:700; color:var(--rose); margin-bottom:.2rem;}
+.notes dd{font-size:.9rem; line-height:1.55; color:var(--ink);}
+
+/* résumé button */
+.resume{display:inline-flex; align-items:center; gap:.55rem; margin-top:1.1rem;}
+.resume svg{width:18px; height:18px;}
+
+/* ---------- opening moment ---------- */
+body.intro-on main, body.intro-on .top, body.intro-on .foot{opacity:0;}
+main, .top, .foot{transition:opacity .8s ease;}
+.intro{position:fixed; inset:0; z-index:80; display:grid; place-content:center; text-align:center; pointer-events:none;
+  transition:opacity .8s ease, transform .9s ease;}
+.intro.out{opacity:0; transform:translateY(-14px);}
+.intro-name{font-family:var(--display-en); font-weight:600; font-size:clamp(3rem,10vw,6rem); color:#fff;
+  text-shadow:0 0 40px rgba(255,170,215,.85), 0 2px 3px rgba(40,10,80,.35); animation:introIn 1s ease-out both;}
+.intro-sub{margin-top:.4rem; color:#fff; opacity:.85; font-weight:600; animation:introIn 1s .25s ease-out both;}
+@keyframes introIn{from{opacity:0; transform:translateY(16px); letter-spacing:.06em;} to{opacity:1; transform:none;}}
+
+/* ---------- 404 ---------- */
+.lost{min-height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+.lost .page-title{font-size:clamp(3rem,10vw,6rem);}
+
+/* anything marked hidden stays hidden, whatever its display rule */
+[hidden]{display:none !important;}
