@@ -14,7 +14,7 @@
   if (!host) return;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const coarse = window.matchMedia("(pointer: coarse)").matches;
-  const S = Math.min(window.devicePixelRatio || 1, 1.5); // render scale
+  let S = Math.min(window.devicePixelRatio || 1, 1.5);   // render scale (lowered on slow machines)
   const M = 70;                                            // parallax margin (px)
   let W = innerWidth, H = innerHeight;
 
@@ -827,8 +827,19 @@
   }
 
   let last = performance.now(), t0 = last;
+  // low-power mode: if the first seconds run slowly, render smaller and every other frame
+  let perfN = 0, perfT = 0, low = false, skip = false, held = 0;
   function loop(now) {
-    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    let dt = Math.min(0.05, (now - last) / 1000); last = now;
+    if (!low && !document.hidden && now - t0 > 2500 && perfN >= 0) {
+      perfN++; perfT += dt;
+      if (perfN === 90) { if (perfT / perfN > 0.042) { low = true; S = 0.75; rebuild(); } else perfN = -1; }
+    }
+    if (low) {
+      skip = !skip; held += dt;
+      if (skip) { requestAnimationFrame(loop); return; }
+      dt = Math.min(0.1, held); held = 0;
+    }
     // ease the parallax toward the pointer; on touch screens, drift slowly
     let tx = P.nx, ty = P.ny;
     if (coarse || !P.moved) { tx = Math.sin((now - t0) / 4000) * 0.5; ty = Math.cos((now - t0) / 5000) * 0.3; }
@@ -837,17 +848,17 @@
     requestAnimationFrame(loop);
   }
 
+  function rebuild() {
+    W = innerWidth; H = innerHeight;
+    const top = live[live.length - 1];
+    if (!top) return;
+    live.splice(0).forEach(function (e) { e.el.remove(); });
+    show(top.name);
+  }
   let resizeTimer = 0;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      W = innerWidth; H = innerHeight;
-      const top = live[live.length - 1];
-      if (!top) return;
-      live.splice(0).forEach(function (e) { e.el.remove(); });
-      const name = top.name;
-      show(name);
-    }, 250);
+    resizeTimer = setTimeout(rebuild, 250);
   });
 
   if (!reduce) requestAnimationFrame(loop);
