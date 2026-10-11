@@ -6,6 +6,16 @@
 <title data-en="Projects · Wenbo Zhi" data-zh="作品 · Wenbo Zhi">Projects · Wenbo Zhi</title>
 <meta name="description" content="Wenbo Zhi, Electrical Engineering at the University of Waterloo. Embedded systems, firmware, real-time software and web projects.">
 <meta name="theme-color" content="#3d2a7a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wenbo Zhi">
+<meta property="og:title" content="Projects · Wenbo Zhi">
+<meta property="og:description" content="Wenbo Zhi, Electrical Engineering at the University of Waterloo. Embedded systems, firmware, real-time software and web projects.">
+<meta property="og:url" content="https://mitchee30.github.io/personal-web/projects.html">
+<meta property="og:image" content="https://mitchee30.github.io/personal-web/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mitchee30.github.io/personal-web/assets/img/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff9fc0' d='M12 1.5c.6 4.6 2.4 6.9 7 8.5-4.6 1.6-6.4 3.9-7 8.5-.6-4.6-2.4-6.9-7-8.5 4.6-1.6 6.4-3.9 7-8.5z'/%3E%3C/svg%3E">
 <script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang")||((navigator.language||"").toLowerCase().indexOf("zh")===0?"zh":"en");document.documentElement.dataset.lang=l==="zh"?"zh":"en";}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +50,9 @@
 
 <main id="main">
 
+  <p class="chapter">✦ <span class="en">11 pm, after hours</span><span class="zh">深夜十一点，下班之后</span></p>
   <h1 class="page-title"><span class="en">Projects</span><span class="zh">作品</span></h1>
-  <p class="page-lede"><span class="en">Things I made on my own, from a bubble-tea shop to a C++ deploy tool.</span><span class="zh">我自己做的东西，从奶茶店网站到 C++ 部署工具。</span></p>
+  <p class="page-lede"><span class="en">What I build at night when the day job is done, from a bubble-tea shop to a C++ deploy tool. Two of them you can play right on this page.</span><span class="zh">白天的事做完，晚上就做这些：从奶茶店网站到 C++ 部署工具。其中两个可以直接在这页试玩。</span></p>
   
   <article class="panel project star">
     <span class="star-note"><span class="en">Favourite</span><span class="zh">最喜欢的作品</span></span>
@@ -53,7 +64,15 @@
       </div>
       <div class="p-links"><a class="icon-link" href="https://github.com/mitchee30/hi-tea-web-demo" target="_blank" rel="noopener" aria-label="Hi Tea on GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.3-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .2 3.2 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a></div>
     </div>
+    <div class="media">
+      <div class="demo" data-src="https://mitchee30.github.io/hi-tea-web-demo/" data-title="Hi Tea live demo">
+        <div class="demo-stage"><button class="demo-play" type="button"><span class="tri" aria-hidden="true"></span><span class="en">Play it right here</span><span class="zh">就在这里试玩</span></button></div>
+        <div class="demo-note"><span class="en">The real site, running live. Build a drink or spin the wheel.</span><span class="zh">这是真实网站在实时运行，可以调一杯，或者转一下转盘。</span></div>
+      </div>
+      <a class="demo-open" href="https://mitchee30.github.io/hi-tea-web-demo/" target="_blank" rel="noopener"><span class="en">Open in a new tab</span><span class="zh">在新标签页打开</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    </div>
     <ul class="points"><li><span class="en">Drink builder for a fictional shop: pick tea, milk, sugar, ice and toppings while an <b>SVG cup changes colour live</b>, pearls drop in one by one and the price updates.</span><span class="zh">虚构奶茶店的调饮器：选茶底、奶、甜度、冰量和小料，<b>SVG 杯子实时变色</b>，珍珠一颗颗掉进去，价格同步更新。</span></li><li><span class="en">“What should I drink today?” reads live Kitchener-Waterloo weather, scores every drink against the weather and your mood, then spins a wheel to the pick.</span><span class="zh">“今天喝什么”读取 Kitchener-Waterloo 实时天气，结合天气和心情给每杯饮品打分，再用转盘揭晓。</span></li><li><span class="en">One <b>state object and one render()</b> drive the page, and the menu is plain data, so a real shop could swap in its own drinks without touching UI code.</span><span class="zh">一个 <b>state 对象加一个 render()</b> 驱动整页，菜单是纯数据，真实店铺换上自己的饮品不用改界面代码。</span></li></ul>
+    <dl class="notes"><div><dt><span class="en">Why I made it</span><span class="zh">为什么做</span></dt><dd><span class="en">To show what a small shop&#39;s website could feel like if it were fun to use, not just a menu PDF.</span><span class="zh">想展示一家小店的网站可以多好玩，而不只是一份菜单 PDF。</span></dd></div><div><dt><span class="en">Hardest part</span><span class="zh">最难的地方</span></dt><dd><span class="en">Keeping the cup drawing, the price and the menu in step as you change options. Routing every change through one state object and one render() fixed it.</span><span class="zh">改选项时，杯子画面、价格和菜单要同步更新。最后让所有改动都经过同一个 state 对象和一个 render() 才理顺。</span></dd></div><div><dt><span class="en">What I learned</span><span class="zh">学到了什么</span></dt><dd><span class="en">Separating data from UI pays off fast: a new drink is one line of data, not new code.</span><span class="zh">数据和界面分开很快就有回报：加一款新饮品只要加一行数据，不用改代码。</span></dd></div></dl>
     <div class="chips"><span class="chip">JavaScript</span><span class="chip">SVG</span><span class="chip">Open-Meteo API</span><span class="chip">CSS</span></div>
   </article>
   
@@ -67,7 +86,10 @@
       </div>
       <div class="p-links"><a class="icon-link" href="https://github.com/mitchee30/Mock-exam-generator-website" target="_blank" rel="noopener" aria-label="MockUp on GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.3-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .2 3.2 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a></div>
     </div>
+    <div class="media" data-needs-file="assets/img/mockup.webp" hidden><figure class="shot"><img src="assets/img/mockup.webp" alt="MockUp's first step: upload past papers and problem sets as PDFs" width="760" height="620" loading="lazy">
+      <figcaption><span class="en">Step one of three: upload your course PDFs. Generating an exam uses my Claude API key, so there&#39;s no public live demo.</span><span class="zh">三步中的第一步：上传课程 PDF。生成试卷要用我的 Claude API 密钥，所以没有公开的在线演示。</span></figcaption></figure></div>
     <ul class="points"><li><span class="en">Turns a student&#39;s own past papers into <b>brand-new practice exams</b>: upload PDFs, choose question count, types and difficulty, and get new questions rather than copies.</span><span class="zh">把学生自己的往年试卷变成<b>全新的模拟考试</b>：上传 PDF，选题量、题型和难度，生成的是新题而不是原题照搬。</span></li><li><span class="en">Flask backend extracts text with pdfplumber, asks the <b>Claude API</b> for a structured exam, and exports the exam and answer key as PDFs.</span><span class="zh">Flask 后端用 pdfplumber 提取文本，调用 <b>Claude API</b> 生成结构化试卷，再导出试卷和答案 PDF。</span></li><li><span class="en">Practise in the browser with multiple choice, short and long answer, calculation and true/false, and show the answers when you&#39;re ready.</span><span class="zh">支持选择、简答、论述、计算和判断题，可以直接在浏览器里练习，做完再显示答案。</span></li></ul>
+    <dl class="notes"><div><dt><span class="en">Why I made it</span><span class="zh">为什么做</span></dt><dd><span class="en">Past papers run out fast before an exam. I wanted endless new practice that still matches my own course.</span><span class="zh">考前往年题很快就刷完了，我想要源源不断、又贴合自己课程的新练习。</span></dd></div><div><dt><span class="en">Hardest part</span><span class="zh">最难的地方</span></dt><dd><span class="en">Getting brand-new questions back, not copies, in a structure the app can trust. The prompt asks for a strict exam format that the backend checks before showing it.</span><span class="zh">让 AI 返回全新的题目而不是照抄，并且格式稳定到程序能直接用。我让提示词要求严格的试卷格式，后端校验通过才显示。</span></dd></div><div><dt><span class="en">What I learned</span><span class="zh">学到了什么</span></dt><dd><span class="en">Most of the work in an AI app is everything around the model: parsing PDFs, checking output, and clear errors when something&#39;s missing.</span><span class="zh">做 AI 应用，大部分工作其实在模型之外：解析 PDF、检查输出、出问题时给出清楚的提示。</span></dd></div></dl>
     <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Claude API</span><span class="chip">JavaScript</span></div>
   </article>
   
@@ -81,7 +103,13 @@
       </div>
       <div class="p-links"><a class="icon-link" href="https://github.com/mitchee30/deploy-rollback-cli" target="_blank" rel="noopener" aria-label="DeployGuard CLI on GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.3-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .2 3.2 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a></div>
     </div>
+    <div class="media"><div class="term" aria-label="DeployGuard terminal output">
+      <div class="term-bar"><i></i><i></i><i></i><span>deploy-cli</span></div>
+      <pre class="term-body" aria-live="off"></pre>
+      <div class="term-foot"><span><span class="en">Replayed from a real run: v2.0 fails its health check, so DeployGuard rolls back to v1.0.</span><span class="zh">回放自一次真实运行：v2.0 没通过健康检查，DeployGuard 自动回滚到 v1.0。</span></span><button class="term-replay" type="button" hidden><span class="en">Replay</span><span class="zh">重播</span></button></div>
+    </div></div>
     <ul class="points"><li><span class="en">C++ CLI that runs and watches deployment scripts, catching a non-zero exit code or crash the moment it happens.</span><span class="zh">用 C++ 写的命令行工具，运行并监控部署脚本，一旦出现非零退出码或崩溃立刻发现。</span></li><li><span class="en">On failure it stops the deployment and runs a recovery script to restore the <b>last known-good state</b>.</span><span class="zh">部署失败时自动中止，并运行恢复脚本回到<b>上一个正常状态</b>。</span></li><li><span class="en">YAML config keeps orchestration separate from the scripts, so rollback behaviour changes without recompiling. Unit-tested with doctest and checked in CI.</span><span class="zh">YAML 配置把编排逻辑和执行脚本分开，改回滚行为不用重新编译。用 doctest 做单元测试，并接入 CI。</span></li></ul>
+    <dl class="notes"><div><dt><span class="en">Why I made it</span><span class="zh">为什么做</span></dt><dd><span class="en">At Sioux I saw how much damage a half-finished install does. I wanted a small, general tool that never leaves a machine in that state.</span><span class="zh">在 Sioux 实习时见过装到一半的安装会造成多大麻烦，所以想做一个通用的小工具，保证机器永远不会停在那种状态。</span></dd></div><div><dt><span class="en">Hardest part</span><span class="zh">最难的地方</span></dt><dd><span class="en">Surviving a crash mid-deploy. Backups live on the same persistent disk as the app, not in /tmp, and the tool checks for an unfinished deploy every time it starts.</span><span class="zh">部署中途断电或崩溃怎么办。备份放在和应用同一块持久磁盘上，而不是会被清空的 /tmp；每次启动时还会先检查有没有没做完的部署。</span></dd></div><div><dt><span class="en">What I learned</span><span class="zh">学到了什么</span></dt><dd><span class="en">Treating deployment as a state machine makes failure handling something you design, not something you patch later.</span><span class="zh">把部署当成状态机来写，失败处理就成了提前设计好的部分，而不是事后打的补丁。</span></dd></div></dl>
     <div class="chips"><span class="chip">C++17</span><span class="chip">CMake</span><span class="chip">Bash</span><span class="chip">YAML</span><span class="chip">GitHub Actions</span></div>
   </article>
   
@@ -95,7 +123,15 @@
       </div>
       <div class="p-links"><a class="icon-link" href="https://github.com/mitchee30/subscription-reminder-miniprogram" target="_blank" rel="noopener" aria-label="Subscription Renewal Tracker on GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.3-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .2 3.2 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a></div>
     </div>
+    <div class="media">
+      <div class="demo" data-src="https://mitchee30.github.io/subscription-reminder-miniprogram/web-demo/" data-title="Subscription Renewal Tracker demo">
+        <div class="demo-stage"><button class="demo-play" type="button"><span class="tri" aria-hidden="true"></span><span class="en">Play it right here</span><span class="zh">就在这里试玩</span></button></div>
+        <div class="demo-note"><span class="en">A read-only web preview of the mini-program, with sample data.</span><span class="zh">小程序的只读网页预览，使用示例数据。</span></div>
+      </div>
+      <a class="demo-open" href="https://mitchee30.github.io/subscription-reminder-miniprogram/web-demo/" target="_blank" rel="noopener"><span class="en">Open in a new tab</span><span class="zh">在新标签页打开</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    </div>
     <ul class="points"><li><span class="en">Full-stack mini-program that tracks subscriptions and memberships and <b>reminds you before you&#39;re billed</b>.</span><span class="zh">全栈微信小程序，记录各种订阅和会员，<b>在扣费前提醒你</b>。</span></li><li><span class="en">Serverless backend on WeChat Cloud: cloud functions, per-user data isolation and a daily job that scans for upcoming renewals.</span><span class="zh">基于微信云开发的无服务器后端：云函数、按用户隔离数据，每天定时扫描即将到期的订阅。</span></li><li><span class="en"><b>Shared households</b>: join with an invite code, and every member is notified before a shared subscription renews.</span><span class="zh"><b>共享组</b>：凭邀请码加入，共享订阅到期前通知所有成员。</span></li></ul>
+    <dl class="notes"><div><dt><span class="en">Why I made it</span><span class="zh">为什么做</span></dt><dd><span class="en">I kept forgetting to cancel free trials before they turned into charges.</span><span class="zh">我老是忘了在免费试用变成扣费之前取消。</span></dd></div><div><dt><span class="en">Hardest part</span><span class="zh">最难的地方</span></dt><dd><span class="en">WeChat only lets a mini-program send one reminder per user permission. I designed a flow that asks again at the right moment instead of treating it as a bug.</span><span class="zh">微信每获得一次授权只能发一条订阅消息。我设计了在合适时机重新请求授权的流程，而不是把它当成无解的 bug。</span></dd></div><div><dt><span class="en">What I learned</span><span class="zh">学到了什么</span></dt><dd><span class="en">Platform limits are design constraints. Working with them gave a better product than fighting them.</span><span class="zh">平台限制本身就是设计约束，顺着它做出来的产品，比硬碰硬更好用。</span></dd></div></dl>
     <div class="chips"><span class="chip">JavaScript</span><span class="chip">WeChat Cloud Dev</span><span class="chip">Serverless</span><span class="chip">NoSQL</span></div>
   </article>
 
@@ -107,5 +143,6 @@
 
 <script src="assets/scenes.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/extras.js"></script>
 </body>
 </html>
