@@ -300,7 +300,10 @@
   }, { passive: true });
   document.addEventListener("pointerleave", function () { P.inside = false; });
   window.addEventListener("pointerdown", function (e) {
-    if (e.target.closest("a, button, input, textarea, .panel, .ticket")) return;
+    if (e.target.closest("a, button, input, textarea, .secret-pop, .finale")) return;
+    // hidden secrets (assets/game.js) float above the content, so they can be caught anywhere
+    if (window.Game && window.Game.click(e.clientX, e.clientY)) { burst(e.clientX, e.clientY); return; }
+    if (e.target.closest(".panel, .ticket")) return;
     burst(e.clientX, e.clientY);
     if (current && current.onClick) current.onClick(e.clientX, e.clientY);
   });
@@ -484,12 +487,7 @@
         const x0 = px + (i % 2 ? 40 : -40);
         c.beginPath(); c.moveTo(x0, l[0]); c.quadraticCurveTo((x0 + w + 2 * o) / 2, l[0] + l[1], w + 2 * o, l[0] + 10); c.stroke();
       });
-      c.fillStyle = "#1a2846"; // birds resting on a wire
-      [0.42, 0.47, 0.55].forEach(function (f) {
-        const x = px + (w + 2 * o - px) * f, y = top + 16 + 4 * f * (1 - f) * 120 * 0.5 + 54 - 2;
-        c.beginPath(); c.ellipse(x, y - 4, 5, 4, 0, 0, Math.PI * 2); c.fill();
-        c.beginPath(); c.arc(x + 4, y - 9, 3, 0, Math.PI * 2); c.fill();
-      });
+      // the birds on the wire are drawn live by assets/game.js
     });
     const layers = [sky, towers, smalls, farCity, nearCity, wires];
     return {
@@ -823,7 +821,9 @@
   function renderOnce(e, t, dt) {
     e.ctx.clearRect(0, 0, W, H);
     e.scene.frame(e.ctx, t, dt);
-    if (e.scene === current) drawSparks(e.ctx, e.scene.tint || "#ffffff", dt);
+    if (e.scene !== current) return;
+    if (window.Game) window.Game.draw(e.ctx, e.name, t, dt, P, W, H);
+    drawSparks(e.ctx, e.scene.tint || "#ffffff", dt);
   }
 
   let last = performance.now(), t0 = last;
@@ -852,4 +852,9 @@
 
   if (!reduce) requestAnimationFrame(loop);
   window.Scenes = { show: show };
+
+  // hidden secrets in each scene (assets/game.js)
+  const g = document.createElement("script");
+  g.src = "assets/game.js";
+  document.head.appendChild(g);
 })();
